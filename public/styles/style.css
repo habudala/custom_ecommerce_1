@@ -1,0 +1,246 @@
+/*----- CSS RESET CODE------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+
+
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+/*	font: inherit;
+	vertical-align: baseline;*/
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+/*body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}*/
+
+/*----- CSS CUSTOM CODE------*/
+
+body {background:#edf2fc;}
+
+.main_wrapper {
+	width:1200px;
+	height:auto;
+	margin:auto;
+
+}
+
+header {
+	width:1200px;
+	height:120px;
+	margin:auto;
+
+}
+
+footer {
+	width:1200px;
+	height:120px;
+	clear:both;
+	background:#d1dcfc;
+	text-align: center;
+}
+
+.content_wrapper {
+	width:1200px;
+	height:800px;
+	margin:auto;
+	background:#edf2fc;
+
+}
+
+.menubar {
+	width:1200px;
+	height:50px;
+	color:black;
+	/*background:#f7f8f9;*/
+	background:#f2f5f9;
+}
+
+#menu {
+	padding:0;
+	margin:0;
+	line-height:48px;
+	float:left;
+}
+
+#menu li {
+	list-style:none;
+	display:inline;
+
+}
+
+#menu a {
+	text-decoration:none;
+	color:black;
+	padding:8px;
+	margin:5px;
+	font-size:18px;
+	font-family:comic sans ms;
+
+}
+
+
+#menu a:hover {
+	color:orange;
+	text-decoration:underline;
+
+}
+
+
+#form {
+	float:right;
+	padding-right:8px;
+	line-height: 55px;
+}
+
+#content_area {
+	width:950px;
+	/*height:800px;*/
+	float:right;
+	background:#f9fbff;
+
+}
+
+#sidebar {
+	width:250px;
+	/*height:800px;*/
+	float:left;
+	background:#f4f8ff;
+
+}
+
+
+#sidebar_title {
+	background:white;
+	color:black;
+	font-size:20px;
+	font-family: arial;
+	padding:10px;
+	text-align: center;
+
+
+}
+
+#cats {
+	text-align:center;
+}
+
+#cats li{
+	list-style:none;
+	display:block;
+	margin:5px;
+}
+
+#cats a {
+	color:black;
+	padding:8px;
+	margin:5px;
+	font-size:20px;
+	font-family: comic sans ms;
+	text-decoration: none;
+}
+
+#cats a:hover {
+color:orange;
+font-weight:bolder;
+text-decoration: underline;
+}
+
+#product_box {
+	width:800px;
+	text-align:center;
+	margin-left:30px;
+	margin-bottom:10px;
+}
+
+#single_product {
+	float:left;
+	margin-left:20px;
+	padding:10px;
+}
+
+#single_product img {
+	border:1px solid black;
+}
+
+
+#logo {
+	float:left;
+	width:120px;
+	height:120px;
+
+}
+
+#banner {
+	width:950px;
+	height:120px;
+	float:right;
+
+}
+
+#insert_form {
+	text-align:left;
+}
+
+#insert_form table {
+	border: 1px solid black;
+	margin:auto;
+	margin-top:45px;
+}
+
+#insert_form tr {
+	
+}
+
+#insert_form td{
+	padding:7px;
+	/*border: 1px solid black;*/
+}
+
+#insert_form h1{
+	font-size:25px;
+	padding:5px;
+	text-align: center;
+}
+
+#insert_form h2{
+	font-size:18px;
+	padding:3px;
+}
+
+#insert_form input{
+	height:20px;
+	width:200px;
+
