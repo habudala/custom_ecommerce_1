@@ -8,13 +8,7 @@ function get_cats(){
 
 	$result = mysqli_query($db, $sql);
 
-	while ($category = mysqli_fetch_assoc($result)) {
-
-		$cat_id = $category['cat_id'];
-		$cat_title = $category['cat_title'];
-
 		return $result;
-	}
 }
 
 
@@ -51,11 +45,65 @@ function insert_product($product=[]) {
 		return $result;
 }
 
-function get_products() {
+function get_latest_products() {
 	global $db;
 
 	$sql = "SELECT * FROM products ";
-	$sql .= "ORDER BY RAND() LIMIT 6";
+	$sql .= "ORDER BY product_id ASC LIMIT 6";
+
+	$result = mysqli_query($db, $sql);
+
+	return $result;
+}
+
+function get_all_products() {
+	global $db;
+
+	$sql = "SELECT * FROM products ";
+
+	$result = mysqli_query($db, $sql);
+
+	return $result;
+}
+
+function get_product_by_id($id) {
+	global $db;
+
+	$sql = "SELECT * FROM products ";
+	$sql .= "WHERE product_id=" . "'" . $id . "'";
+
+	$result = mysqli_query($db, $sql);
+
+	return $result;
+}
+
+function get_products_by_cat_id($cat_id) {
+	global $db;
+
+	$sql = "SELECT * FROM products ";
+	$sql .= "WHERE product_cat=" . "'" . $cat_id . "'";
+
+	$result = mysqli_query($db, $sql);
+
+	return $result;
+}
+
+function get_products_by_brand_id($brand_id) {
+	global $db;
+
+	$sql = "SELECT * FROM products ";
+	$sql .= "WHERE product_brand=" . "'" . $brand_id . "'";
+
+	$result = mysqli_query($db, $sql);
+
+	return $result;
+}
+
+function get_products_by_keyword($keyword) {
+	global $db;
+
+	$sql = "SELECT * FROM products ";
+	$sql .= "WHERE product_keywords LIKE '%" .$keyword . "%' ";
 
 	$result = mysqli_query($db, $sql);
 

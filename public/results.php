@@ -55,7 +55,7 @@
 				<ul id="cats">
 
 				<?php 	$result = get_cats();
-					while( $category = mysqli_fetch_assoc($result)) {
+					while($category = mysqli_fetch_assoc($result)) {
 						$cat_id = $category['cat_id'];
 						$cat_title = $category['cat_title'];
 
@@ -84,7 +84,7 @@
 
 				</ul>
 
-			</div> <!-- sidebar ends here -->
+			</div>
 
 			<div id="content_area">
 
@@ -100,67 +100,11 @@
 
 				<div id="product_box">
 					<?php 
-						if(isset($_GET['cat_id'])) {
-							$product_cat = $_GET['cat_id'];
-							$result = get_products_by_cat_id($product_cat);
-							$result_num = mysqli_num_rows($result);
 
-							if($result_num === 0) {echo "<h2>No items were found in this category</h2>";}
-							while ($product = mysqli_fetch_assoc($result)) {
-								$product_id = $product['product_id'];
-								// $product_cat = $product['product_cat'];
-								$product_brand = $product['product_brand'];
-								$product_title = $product['product_title'];
-								$product_price = $product['product_price'];
-								$product_image = $product['product_img'];
-
-								echo '<div id="single_product">
-										<h3>' . $product_title . '</h3>'
-										. '<img src="admin_area/product_images/' . $product_image
-										.'" width="240"  height="240" />
-									    <h2>$' . $product_price . '</h2>'
-									    . '<a  style="float:left" href="details.php?product_id='
-									    . $product_id . '" >Details</a>
-									    <a style="float:right" href="index.php?product_id='
-									    . $product_id .'" >'
-									    .'<button>Add to Cart</button></a>
-									   </div>'
-									;
-
-							}
-						} else if(isset($_GET['brand_id'])) {
-
-							$product_brand = $_GET['brand_id'];
-							$result = get_products_by_brand_id($product_brand);
-							$result_num = mysqli_num_rows($result);
-
-							if($result_num === 0) {echo "<h2>No items were found in with this brand</h2>";}
-
-								while ($product = mysqli_fetch_assoc($result)) {
-								$product_id = $product['product_id'];
-								$product_cat = $product['product_cat'];
-								// $product_brand = $product['product_brand'];
-								$product_title = $product['product_title'];
-								$product_price = $product['product_price'];
-								$product_image = $product['product_img'];
-
-								echo '<div id="single_product">
-										<h3>' . $product_title . '</h3>'
-										. '<img src="admin_area/product_images/' . $product_image
-										.'" width="240"  height="240" />
-									    <h2>$' . $product_price . '</h2>'
-									    . '<a  style="float:left" href="details.php?product_id='
-									    . $product_id . '" >Details</a>
-									    <a style="float:right" href="index.php?product_id='
-									    . $product_id .'" >'
-									    .'<button>Add to Cart</button></a>
-									   </div>'
-									;
-
-							}
-
-						}else {
-							$result = get_latest_products();
+						if(isset($_POST['search'])) {
+							
+							$keyword = $_POST['user_query'];
+							$result = get_products_by_keyword($keyword);
 							while ($product = mysqli_fetch_assoc($result)) {
 								$product_id = $product['product_id'];
 								$product_cat = $product['product_cat'];
