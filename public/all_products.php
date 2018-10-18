@@ -89,9 +89,13 @@
 			<div id="content_area">
 
 				<div id="shopping_cart">
-					<span><a href="cart.php">Cart</a></span>
+					<span>
+						<a href="cart.php">
+							<img src="images/cart.png"/>
+						</a>
+					</span>
 					<span>Total:</span>
-					<span>Items:</span>
+					<span>Items: <?php echo total_items(); ?></span>
 					<span>Welcome Guest!</span>
 					
 					
@@ -113,15 +117,18 @@
 								$product_image = $product['product_img'];
 
 								echo '<div id="single_product">
-										<h3>' . $product_title . '</h3>'
-										. '<img src="admin_area/product_images/' . $product_image
+										<h3>' . $product_title . '</h3>
+										<img src="admin_area/product_images/' . $product_image
 										.'" width="240"  height="240" />
-									    <h2>$' . $product_price . '</h2>'
-									    . '<a  style="float:left" href="details.php?product_id='
+										<p>Our Price </p>
+									    <h2>$' . $product_price . '</h2>
+									    <div id="buttons">
+									    	<a  style="float:left" href="details.php?product_id='
 									    . $product_id . '" >Details</a>
-									    <a style="float:right" href="index.php?product_id='
-									    . $product_id .'" >'
-									    .'<button>Add to Cart</button></a>
+									    	<a style="float:right" href="index.php?product_id='
+									    . $product_id .'" >
+									    <button>Add to Cart</button></a>
+									    </div>
 									   </div>'
 									;
 
@@ -132,7 +139,10 @@
 
 		</div>
 
-		<footer>&copy; <?php echo date('Y'); ?> Custom Ecommerce site by www.lhabuda.com</footer>
+		<footer>
+			&copy; <?php echo date('Y'); ?> Custom Ecommerce site by www.lhabuda.com
+			<?php db_disconnect($db); ?>
+		</footer>
 		
 	</div> <!-- main_wrapper ends here -->
 

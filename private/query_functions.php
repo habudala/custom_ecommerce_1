@@ -110,6 +110,61 @@ function get_products_by_keyword($keyword) {
 	return $result;
 }
 
+function add_to_cart() {
+	if(isset($_GET['product_id'])) {
+		global $db;
+		$ip = get_ip();
+		$product_id = $_GET['product_id'];
+
+		$sql = "SELECT * FROM cart WHERE ip_address=";
+		$sql .= "'" . $ip . "' AND product_id=";
+		$sql .= "'" . $product_id . "'";
+
+		$result = mysqli_query($db, $sql);
+
+		if(mysqli_num_rows($result) > 0) {
+			echo "";
+		}else{
+			$sql = "INSERT INTO cart (";
+			$sql .= "product_id, ip_address) VALUES (";
+			$sql .=  "'" . $product_id . "', '" . $ip .  "')";
+
+			$result = mysqli_query($db, $sql);
+
+			echo "<script>window.open('index.php','self')</script>";
+		}
+	}
+}
+
+function total_items() {
+	global $db;
+	$ip =get_ip();
+
+	if(isset($_GET['product_id'])) {
+			
+			
+
+			$sql = "SELECT * FROM cart WHERE ip_address=";
+			$sql .= "'" . $ip . "'";
+
+			$result = mysqli_query($db, $sql);
+
+			$result_num = mysqli_num_rows($result);
+
+		}else {
+			
+
+			$sql = "SELECT * FROM cart WHERE ip_address=";
+			$sql .= "'" . $ip . "'";
+
+			$result = mysqli_query($db, $sql);
+
+			$result_num = mysqli_num_rows($result);
+		}
+
+		return $result_num;
+}
+
 
 
 ?>

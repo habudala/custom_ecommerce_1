@@ -93,9 +93,13 @@ require_once('../private/initialize.php');
 			<div id="content_area">
 
 				<div id="shopping_cart">
-					<span><a href="cart.php">Cart</a></span>
+					<span>
+						<a href="cart.php">
+							<img src="images/cart.png"/>
+						</a>
+					</span>
 					<span>Total:</span>
-					<span>Items:</span>
+					<span>Items: <?php echo total_items(); ?></span>
 					<span>Welcome Guest!</span>
 					
 					
@@ -117,15 +121,18 @@ require_once('../private/initialize.php');
 							$product_desc = $product['product_desc'];
 
 							echo '<div id="single_product">
-									<h3>' . $product_title . '</h3>'
-									. '<img src="admin_area/product_images/' . $product_image
-									.'" width="400"  height="300" />
-								    <h2>$' . $product_price . '</h2>'
-								    . '<p>' . $product_desc . '</p>'
-								    . '<a  style="float:left" href="index.php" >Go Back</a>
+									<h1>' . $product_title . '</h1>
+									<img id="indiv_img" src="admin_area/product_images/' . $product_image
+									.'" />
+									<p>Our Price </p>
+								    <h2>$' . $product_price . '</h2>
+								    <p>' . $product_desc . '</p>
+								    <div id="buttons">
+								    <a  style="float:left" href="index.php" >Go Back</a>
 								    <a style="float:right" href="index.php?product_id='
-								    . $product_id .'" >'
-								    .'<button>Add to Cart</button></a>
+								    . $product_id .'" >
+								    <button>Add to Cart</button></a>
+								    </div>
 								   </div>'
 								;
 
@@ -136,7 +143,10 @@ require_once('../private/initialize.php');
 
 		</div>
 
-		<footer>&copy; <?php echo date('Y'); ?> Custom Ecommerce site by www.lhabuda.com</footer>
+		<footer>
+			&copy; <?php echo date('Y'); ?> Custom Ecommerce site by www.lhabuda.com
+			<?php db_disconnect($db); ?>
+		</footer>
 		
 	</div> <!-- main_wrapper ends here -->
 
