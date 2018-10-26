@@ -39,6 +39,11 @@ function get_ip() {
 
 }
 
+function redirect_to($location){
+	header("Location: " . $location);
+		exit;
+}
+
 ////////////////DB Functions ////////////////////
 
 function db_disconnect($connection) {

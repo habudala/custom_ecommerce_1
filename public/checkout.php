@@ -55,7 +55,7 @@
 				<ul id="cats">
 
 				<?php 	$result = get_cats();
-					while($category = mysqli_fetch_assoc($result)) {
+					while( $category = mysqli_fetch_assoc($result)) {
 						$cat_id = $category['cat_id'];
 						$cat_title = $category['cat_title'];
 
@@ -84,57 +84,10 @@
 
 				</ul>
 
-			</div>
+			</div> <!-- sidebar ends here -->
 
 			<div id="content_area">
-			<?php add_to_cart('all_products.php'); ?>
-				<div id="shopping_cart">
-					<span>
-						<a href="cart.php">
-							<img src="images/cart.png"/>
-						</a>
-					</span>
-					<span>Total: <?php echo "$" . total_price(); ?></span>
-					<span>Items: <?php echo total_items(); ?></span>
-					<span>Welcome Guest!</span>
-					
-					
 
-				</div>
-
-				<div id="product_box">
-					<?php 
-
-
-						
-							$result = get_all_products();
-							while ($product = mysqli_fetch_assoc($result)) {
-								$product_id = $product['product_id'];
-								$product_cat = $product['product_cat'];
-								$product_brand = $product['product_brand'];
-								$product_title = $product['product_title'];
-								$product_price = $product['product_price'];
-								$product_image = $product['product_img'];
-
-								echo '<div id="single_product">
-										<h3>' . $product_title . '</h3>
-										<img src="admin_area/product_images/' . $product_image
-										.'" width="240"  height="240" />
-										<p>Our Price </p>
-									    <h2>$' . $product_price . '</h2>
-									    <div id="buttons">
-									    	<a  style="float:left" href="details.php?product_id='
-									    . $product_id . '" >Details</a>
-									    	<a style="float:right" href="all_products.php?product_id='
-									    . $product_id .'" >
-									    <button>Add to Cart</button></a>
-									    </div>
-									   </div>'
-									;
-
-							}
-					?>
-				</div>
 			</div>
 
 		</div>

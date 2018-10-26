@@ -87,22 +87,22 @@
 			</div> <!-- sidebar ends here -->
 
 			<div id="content_area">
-			<?php add_to_cart(); ?>
+			<?php //add_to_cart('index.php'); ?>
 				<div id="shopping_cart">
 					<span>
 						<a href="cart.php">
 							<img src="images/cart.png"/>
 						</a>
 					</span>
-					<span>Total:</span>
-					<span>Items: <?php echo total_items(); ?></span>
+			<!-- 		<span>Total: <?php // echo "$" . $total; ?></span>
+					<span>Items: <?php //echo total_items(); ?></span> -->
 					<span>Welcome Guest!</span>
 					
 					
 
 				</div>
 
-				<?php $ip = get_ip(); ?>
+				<?php //$ip = get_ip(); ?>
 
 				<div id="product_box">
 					<?php 
@@ -129,7 +129,7 @@
 									    <div id="buttons">
 									    	<a  style="float:left" href="details.php?product_id='
 									    . $product_id . '" >Details</a>
-									    	<a style="float:right" href="index.php?product_id='
+									    	<a style="float:right" href="cart.php?add='
 									    . $product_id .'" >
 									    <button>Add to Cart</button></a>
 									    </div>
@@ -160,9 +160,9 @@
 										<p>Our Price </p>
 									    <h2>$' . $product_price . '</h2>
 									    <div id="buttons">
-									    	<a  style="float:left" href="details.php?product_id='
+									    	<a  style="float:left" href="details.php?add=false&product_id='
 									    . $product_id . '" >Details</a>
-									    	<a style="float:right" href="index.php?product_id='
+									    	<a style="float:right" href="cart.php?add='
 									    . $product_id .'" >
 									    <button>Add to Cart</button></a>
 									    </div>
@@ -190,7 +190,7 @@
 									    <div id="buttons">
 									    	<a  style="float:left" href="details.php?product_id='
 									    . $product_id . '" >Details</a>
-									    	<a style="float:right" href="index.php?product_id='
+									    	<a style="float:right" href="cart.php?add='
 									    . $product_id .'" >
 									    <button>Add to Cart</button></a>
 									    </div>

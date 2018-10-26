@@ -11,7 +11,6 @@ function get_cats(){
 		return $result;
 }
 
-
 //
 function get_brands() {
 	global $db;
@@ -22,7 +21,6 @@ function get_brands() {
 
 	return $result;
 }
-
 
 //
 function insert_product($product=[]) {
@@ -45,6 +43,7 @@ function insert_product($product=[]) {
 		return $result;
 }
 
+//
 function get_latest_products() {
 	global $db;
 
@@ -56,6 +55,7 @@ function get_latest_products() {
 	return $result;
 }
 
+//
 function get_all_products() {
 	global $db;
 
@@ -66,6 +66,7 @@ function get_all_products() {
 	return $result;
 }
 
+//
 function get_product_by_id($id) {
 	global $db;
 
@@ -77,6 +78,7 @@ function get_product_by_id($id) {
 	return $result;
 }
 
+//
 function get_products_by_cat_id($cat_id) {
 	global $db;
 
@@ -88,6 +90,7 @@ function get_products_by_cat_id($cat_id) {
 	return $result;
 }
 
+//
 function get_products_by_brand_id($brand_id) {
 	global $db;
 
@@ -99,6 +102,7 @@ function get_products_by_brand_id($brand_id) {
 	return $result;
 }
 
+//
 function get_products_by_keyword($keyword) {
 	global $db;
 
@@ -110,60 +114,19 @@ function get_products_by_keyword($keyword) {
 	return $result;
 }
 
-function add_to_cart() {
-	if(isset($_GET['product_id'])) {
-		global $db;
-		$ip = get_ip();
-		$product_id = $_GET['product_id'];
 
-		$sql = "SELECT * FROM cart WHERE ip_address=";
-		$sql .= "'" . $ip . "' AND product_id=";
-		$sql .= "'" . $product_id . "'";
 
-		$result = mysqli_query($db, $sql);
-
-		if(mysqli_num_rows($result) > 0) {
-			echo "";
-		}else{
-			$sql = "INSERT INTO cart (";
-			$sql .= "product_id, ip_address) VALUES (";
-			$sql .=  "'" . $product_id . "', '" . $ip .  "')";
-
-			$result = mysqli_query($db, $sql);
-
-			echo "<script>window.open('index.php','self')</script>";
-		}
-	}
-}
-
-function total_items() {
+function delete_product_by_id($id) {
 	global $db;
-	$ip =get_ip();
+	$sql = "DELETE * FROM cart WHERE product_id='";
+	$sql .=$id ."'";
 
-	if(isset($_GET['product_id'])) {
-			
-			
+	$result = mysqli_query($db, $sql);
 
-			$sql = "SELECT * FROM cart WHERE ip_address=";
-			$sql .= "'" . $ip . "'";
-
-			$result = mysqli_query($db, $sql);
-
-			$result_num = mysqli_num_rows($result);
-
-		}else {
-			
-
-			$sql = "SELECT * FROM cart WHERE ip_address=";
-			$sql .= "'" . $ip . "'";
-
-			$result = mysqli_query($db, $sql);
-
-			$result_num = mysqli_num_rows($result);
-		}
-
-		return $result_num;
+	return $result;
 }
+
+
 
 
 

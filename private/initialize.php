@@ -1,5 +1,9 @@
 <?php ob_start(); // output buffering is turned on
 
+// starting sessions
+session_start();
+
+
 //dirname()-->returns path to parent directory
 // __FILE__ --> returns path to this file
 define("PRIVATE_PATH", dirname(__FILE__));
@@ -22,6 +26,10 @@ define("WWW_ROOT", $doc_root);
 	  require_once('db.php');
  	  require_once('functions.php');
  	  require_once('query_functions.php');
+ 	  require_once('cart_functions.php');
+
+ 	  global $db;
+ 	  // $_SESSION['qty'] = '1';
 
 
 
