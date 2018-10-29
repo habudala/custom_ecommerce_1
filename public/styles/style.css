@@ -296,11 +296,13 @@ text-decoration: underline;
 #add_div {
 	text-align:center;
 	margin:auto;
+	margin-top:5px;
+	margin-bottom:5px;
 	border: 1px solid grey;
-	border-radius: 50%;
+	border-radius: 15%;
 	width:20px;
 	height:20px
-	/*margin: 5px 5px 5px 5px;*/
+	
 }
 
 #add_img {width:10px;
@@ -354,6 +356,22 @@ text-decoration: underline;
 #insert_form input{
 	height:20px;
 	width:200px;
+}
+
+#cust_table {
+margin:auto;
+	border:2px inset #f2f2f2;
+	padding:25px;
+}
+
+#cust_table td{
+
+	padding:5px 5px 5px 5px;
+}
+
+#login_div {
+	margin: 30px 5px 5px 5px;
+
 }
 
 

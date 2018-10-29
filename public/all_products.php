@@ -87,15 +87,15 @@
 			</div>
 
 			<div id="content_area">
-			<?php add_to_cart('all_products.php'); ?>
+			<?php //add_to_cart('all_products.php'); ?>
 				<div id="shopping_cart">
 					<span>
 						<a href="cart.php">
 							<img src="images/cart.png"/>
 						</a>
 					</span>
-					<span>Total: <?php echo "$" . total_price(); ?></span>
-					<span>Items: <?php echo total_items(); ?></span>
+					<span>Total: <?php //echo "$" . total_price(); ?></span>
+					<span>Items: <?php //echo total_items(); ?></span>
 					<span>Welcome Guest!</span>
 					
 					
@@ -125,7 +125,7 @@
 									    <div id="buttons">
 									    	<a  style="float:left" href="details.php?product_id='
 									    . $product_id . '" >Details</a>
-									    	<a style="float:right" href="all_products.php?product_id='
+									    	<a style="float:right" href="cart.php?add='
 									    . $product_id .'" >
 									    <button>Add to Cart</button></a>
 									    </div>

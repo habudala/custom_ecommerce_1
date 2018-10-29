@@ -100,14 +100,72 @@
 					
 
 				</div>
-				<?php 
-					if(isset($_SESSION['customer_email'])) {
-						include('payment.php');
-						
-					}else{
-						include('customer_login.php');
-					}
-				?>
+
+				<form action="customer_register.php" method="post" enctype="multipart/form-data">
+					<table style="margin:auto">
+						<tr>
+							<td><label>Name</label></td>
+							<td><input type="text" name="cust_name" /></td>
+						</tr>
+						<tr>
+							<td><label>Email</label></td>
+							<td><input type="text" name="cust_email" /></td>
+						</tr>
+						<tr>
+							<td><label>Password</label></td>
+							<td><input type="password" name="cust_password" /></td>
+						</tr>
+						<tr>
+							<td><label>Profile picture</label></td>
+							<td><input type="file" name="cust_img" /></td>
+						</tr>
+						<tr>
+							<td><label>Country</label></td>
+							<td>
+								<select name="cust_country" >
+									<option>Select a Country</option>
+									<option>USA</option>
+									<option>Canada</option>
+									<option>Mexico</option>
+									<option>UK</option>
+									<option>Ireland</option>
+									<option>France</option>
+									<option>Spain</option>
+									<option>Portugal</option>
+									<option>Netherlands</option>
+									<option>Belgium</option>
+									<option>Italy</option>
+									<option>Switzerland</option>
+									<option>Austria</option>
+									<option>Germany</option>
+									<option>Hungary</option>
+									<option>Poland</option>
+									<option>Russia</option>
+									<option>China</option>
+
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label>City</label></td>
+							<td><input type="text" name="cust_city" /></td>
+						</tr>
+						<tr>
+							<td><label>Address</label></td>
+							<td><textarea name="cust_addr" ></textarea></td>
+						</tr>
+						<tr>
+							<td><label>Contact number</label></td>
+							<td><input type="text" name="cust_phone" /></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center"><input type="submit" name="register" value="Create account" /></td>
+						</tr>
+
+					</table>
+
+				</form>
+
 			</div>
 
 		</div>

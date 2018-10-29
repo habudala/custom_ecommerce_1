@@ -99,7 +99,7 @@ require_once('../private/initialize.php');
 						</a>
 					</span>
 					<span>Total:</span>
-					<span>Items: <?php echo total_items(); ?></span>
+					<span>Items: <?php //echo total_items(); ?></span>
 					<span>Welcome Guest!</span>
 					
 					
@@ -129,8 +129,8 @@ require_once('../private/initialize.php');
 								    <p>' . $product_desc . '</p>
 								    <div id="buttons">
 								    <a  style="float:left" href="index.php" >Go Back</a>
-								    <a style="float:right" href="index.php?product_id='
-								    . $product_id .'" >
+								    <a style="float:right" href="cart.php?add='
+									    . $product_id .'" >
 								    <button>Add to Cart</button></a>
 								    </div>
 								   </div>'

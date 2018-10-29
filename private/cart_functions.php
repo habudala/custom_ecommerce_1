@@ -90,7 +90,7 @@ function cart(){
 											<img id="add_img" src="' .url_for('images/increment.png') . '" />
 										</div>
 									</a>
-									<h2>$ ' . $value . '</h2>
+									<h3>$ ' . $value . '</h3>
 									<a href="cart.php?remove=' . $id . '">
 										<div id="add_div">
 											<img id="add_img" src="' .url_for('images/decrement.png') . '" />
@@ -98,10 +98,12 @@ function cart(){
 									</a>
 								</td>
 								<td>
-									<a href="cart.php?delete=' . $id . '">Delete</a>
+									<a href="cart.php?delete=' . $id . '">
+										<img width="15" height="15" src="images/garbage.png" />
+									</a>
 								</td>
 								<td>
-									<p> item price: $ ' . $sub . '</p>
+									<h3> ' . $value . ' x $' . $get_row['product_price'] . ' = $' . $sub . '</h3>
 								</td>
 							<tr/>';
 

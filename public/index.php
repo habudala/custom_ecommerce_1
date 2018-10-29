@@ -160,7 +160,7 @@
 										<p>Our Price </p>
 									    <h2>$' . $product_price . '</h2>
 									    <div id="buttons">
-									    	<a  style="float:left" href="details.php?add=false&product_id='
+									    	<a  style="float:left" href="details.php?product_id='
 									    . $product_id . '" >Details</a>
 									    	<a style="float:right" href="cart.php?add='
 									    . $product_id .'" >
