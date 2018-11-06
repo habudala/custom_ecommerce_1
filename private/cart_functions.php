@@ -11,11 +11,11 @@ if(isset($_GET['add'])){
 		// if qty in db doesn't match qty in sessions then ... (meaning not out of qty) add 1 to session qty
 		if($q_row['quantity'] != $_SESSION['cart_id_' . (int) $_GET['add']]){
 			$_SESSION['cart_id_' . (int)$_GET['add']] += '1' ;
-			// redirect so session variables are detected
+			$_SESSION['buyer']=true;
 			
 		}
 	}
-
+	// redirect so session variables are detected
 	header('location:cart.php');
 }
 
@@ -117,6 +117,8 @@ function cart(){
 	
 	if($total == 0){
 		echo 'your cart is empty!';
+		$_SESSION['buyer']=false;
+
 	}else {}
 
 	return $total;

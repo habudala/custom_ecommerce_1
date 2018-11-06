@@ -102,9 +102,28 @@
 							<img src="images/cart.png"/>
 						</a>
 					</span>
-					<span>Total: <?php //echo "$" . total_price(); ?></span>
-					<span>Items: <?php //echo total_items(); ?></span>
-					<span>Welcome Guest!</span>
+					<!-- <span>Total: <?php //echo "$" . total_price(); ?></span> -->
+					<!-- <span>Items: <?php //echo total_items(); ?></span> -->
+
+										<span>
+					<?php 
+						if(!isset($_SESSION['customer_email'])) {
+							echo '<a href="checkout.php" >Log In</a>';
+							}else{
+								echo '<a href="logout.php" >Log Out</a>';
+							}
+					?>
+					</span>
+					
+					<!-- <span>Welcome Guest!</span> -->
+
+						<?php 
+							if(isset($_SESSION['customer_email'])) {
+								echo "<span>Welcome " . $_SESSION['customer_email'] . "!</span>";
+							} else {
+								echo "<span>Welcome Guest!</span>";
+							}
+						?>
 					
 					
 

@@ -2,6 +2,7 @@
 
 // starting sessions
 session_start();
+//session_destroy();
 
 
 //dirname()-->returns path to parent directory

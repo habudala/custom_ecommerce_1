@@ -96,9 +96,24 @@
 					</span>
 			<!-- 		<span>Total: <?php // echo "$" . $total; ?></span>
 					<span>Items: <?php //echo total_items(); ?></span> -->
-					<span>Welcome Guest!</span>
-					
-					
+
+					<span>
+					<?php 
+						if(!isset($_SESSION['customer_email'])) {
+							echo '<a href="checkout.php" >Log In</a>';
+							}else{
+								echo '<a href="logout.php" >Log Out</a>';
+							}
+					?>
+					</span>
+						<?php 
+							if(isset($_SESSION['customer_email'])) {
+								echo "<span>Welcome " . $_SESSION['customer_email'] . "!</span>";
+							} else {
+								echo "<span>Welcome Guest!</span>";
+							}
+						?>
+					<!-- <span>Welcome Guest!</span> -->
 
 				</div>
 

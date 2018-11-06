@@ -126,6 +126,35 @@ function delete_product_by_id($id) {
 	return $result;
 }
 
+function customer_register($customer=[]) {
+	global $db;
+		// inserting new customer into db
+	$sql = "INSERT INTO customers (";
+	$sql .= "customer_name, customer_email,";
+	$sql .= "customer_password, customer_country, ";
+	$sql .= "customer_city, customer_address, ";
+	$sql .= "customer_phone, customer_img ) ";
+	$sql .= "VALUES (";
+	$sql .= "'" . db_escape($db,$customer['name']) . "', ";
+	$sql .= "'" . db_escape($db,$customer['email']) . "', ";
+	$sql .= "'" . db_escape($db,$customer['password']) . "', ";
+	$sql .= "'" . db_escape($db,$customer['country']) . "', ";
+	$sql .= "'" . db_escape($db,$customer['city']) . "', ";
+	$sql .= "'" . db_escape($db,$customer['address']) . "', ";
+	$sql .= "'" . db_escape($db,$customer['contact']) . "', ";
+	$sql .= "'" . db_escape($db,$customer['image']) . "'";
+	$sql .= ")";
+
+	$result = mysqli_query($db, $sql);
+
+	if($result) {
+		echo "<script>alert('Registration Successful!')</script>";
+		// redirect_to(url_for('customer_register.php'));
+		// echo "<script>window.open('customer_register.php', 'self')</script>";
+	}else {
+		}
+}
+
 
 
 
